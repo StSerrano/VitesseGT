@@ -1,0 +1,176 @@
+/*Body pour le style général du site web*/
+body{
+	font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	background: #000;
+	font-weight: 400;
+	font-size: 14px;
+	color: #bbbbbb;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	min-height: 100%;
+}
+/*A pour les liens*/
+a{
+	text-decoration: none;
+}
+/*Container contient le corps du site web*/
+.container{
+	position: relative;
+}
+.container > header{
+	padding: 30px 30px 0px 20px;
+	margin: 0px 20px 0px 20px;
+	position: relative;
+	display: block;
+    text-align: left;
+}
+.container > header p{
+	width: 35%;
+	display: block;
+}
+/*top-bar pour le menu en haut du site web-contient style général, style des liens*/
+.top-bar{
+	font-family: Arial, sans-serif;
+	line-height: 25px;
+	font-size: 11px;
+	width: 100%;
+	background: rgb(20, 20, 20);
+	opacity: 0.9;
+	text-transform: uppercase;
+	z-index: 9999;
+	position: relative;
+	box-shadow: 1px 0px 2px #000;
+}
+.top-bar a{
+	padding: 0px 10px;
+	letter-spacing: 1px;
+	color: #ddd;
+	display: block;
+	float: left;
+}
+.top-bar a:hover{
+	color: rgb(192, 98, 98);
+}
+.top-bar span.right{
+	float: right;
+}
+.top-bar span.right a{
+	float: none;
+	display: inline;
+}
+.message{
+	clear: both; /*non utilisé pour le moment, espace pour annonce future */
+}
+/*p.bouton pour les boutons du menu principale-contient information de la forme des boutons, style des liens*/
+p.bouton{
+	display: block;
+	padding: 15px 0px;
+}
+p.bouton a,
+p.bouton a.link,
+p.bouton a.link:hover{
+    display: inline-block;
+	border: 1px solid #ffffff;
+	padding: 4px 10px 3px;
+	font-size: 13px;
+	line-height: 18px;
+	margin: 2px 3px;
+	font-weight: 800;
+	border-radius: 5px;
+	color:rgb(255, 255, 255);
+}
+p.bouton a:hover{
+	color: #000000;
+	background: #f0f0f0;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+p.bouton a:active{
+	background: #535353;
+	box-shadow: 0px 1px 1px rgba(255,255,255,0.9);
+}
+p.bouton a.link,
+p.bouton a.link:hover{
+	background: #a3a3a3;
+	opacity: 0.8;
+}
+/*Pour cadrage*/
+html,body,ul,li,h2,form,textarea,p { 
+	margin:0;
+	padding:0;
+}
+/*Pour le formulaire dans la page APropos*/
+form {
+	color: rgb(20, 20, 20);
+	width  : 640px;
+	height : 800px;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background : rgb(212, 212, 212);
+	display  : grid;
+	grid-gap : 20px;
+	grid-template-columns : repeat(2, 1fr);
+	grid-template-rows    : 1em 1em 1em 1em;
+}
+/*Transparence de la video*/
+#fade {
+	display: none;
+	position: fixed;
+	background-color: transparent;
+	opacity: .80;
+	filter: alpha(opacity=0);
+}
+ /* Contour de la video (position, grandeur, etc)*/
+#light {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 80%;
+	max-width: 600px;
+	max-height: 360px;
+	border: 2px solid #FFF;
+	background: #FFF;
+	overflow: visible;
+}
+/*BoxClose pour le X dans la video*/  
+#boxclose {
+	cursor: pointer;
+	color: #fff;
+	border: 1px solid #AEAEAE;
+	border-radius: 3px;
+	background: #222222;
+	font-size: 31px;
+	font-weight: bold;
+	display: inline-block;
+	line-height: 0px;
+	padding: 11px 3px;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	z-index: 1002;
+	opacity: 0.9;
+}
+.boxclose:before {
+	content: "×";
+}
+#fade:hover ~ #boxclose {
+	display:none;
+}
+/*Footer pour la position de la music(seulement pour la page Accueil et # DA)*/  
+footer{
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	width: 98%;
+	background: transparent;
+	text-transform: uppercase;
+	clear:both;
+	position: absolute;
+	margin-top: 41%;
+}
+footer > span.left{
+	float: left;
+}
+footer > span.right{
+	float: right;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/mystyle.css">       <!--fichier CSS-->
+        <link rel="stylesheet" href="../css/SlideshowUsa.css">  <!--fichier CSS pour l'animation du background-->
+        <title>VGT - USA</title>
+    </head>
+
+    <body>                                                          <!--BODY contient le slideshow(pour l'animation du background et le div: container (pour le top-bar, header et footer))-->
+        <ul class="slideshow">                                      <!--UL contient une liste désordonné pour l'animation du background-->
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+        </ul>
+    
+        <div class="container">
+            <div class="top-bar">
+                <a href="https://www.instagram.com/vitessegt/" target="_blank">
+                    <strong>Instagram: </strong>Vitesse GT
+                </a>
+                <span class="right">
+                    <div id="light">
+                        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+                        <video id="VisaChipCardVideo" width="300" controls>
+                            <source src="../video/ComingSoom.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <div id="fade" onClick="lightbox_close();"></div>
+                      <div>
+                          <a href="#" onclick="lightbox_open();">
+                            <strong>Visitez notre magasin</strong>
+                        </a>
+                    </div>
+                </span>
+                <script>
+                    window.document.onkeydown = function(e) {
+                        if (!e) {
+                            e = event;
+                        }
+                        if (e.keyCode == 27) {
+                            lightbox_close();
+                        }
+                    }
+                    function lightbox_open() {
+                        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+                        window.scrollTo(0, 0);
+                        document.getElementById('light').style.display = 'block';
+                        document.getElementById('fade').style.display = 'block';
+                        lightBoxVideo.play();
+                    }
+                    function lightbox_close() {
+                        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+                        document.getElementById('light').style.display = 'none';
+                        document.getElementById('fade').style.display = 'none';
+                        lightBoxVideo.pause();
+                    }
+                </script>
+                <div class="message"><!-- Pour des messages important ! --></div>
+            </div>
+
+            
+            <header>                                        <!--HEADER contient le menu principale (les boutons) -->
+                <p class="bouton">
+                    <a href="../index.html">ACCUEIL</a>
+                    <a href="./Allemagne.html">ALLEMAGNE</a>
+                    <a href="./France.html">FRANCE</a>
+                    <a href="./Italie.html">ITALIE</a>
+                    <a href="./Japon.html">JAPON</a>
+                    <a href="#" class="link">USA</a>
+                    <a href="./APropos.html">À PROPOS</a>
+                </p>
+            </header>
+            
+            <footer>                                         <!--FOOTER contient la musique (seulement dans la page ACCUEIL) + avec # DA avec un float:right-->
+                <span class="right">
+                    Stephanie Serrano DA:0558808
+                </span>
+            </footer>
+        </div>
+    </body>
+</html>

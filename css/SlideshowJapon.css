@@ -1,0 +1,60 @@
+/*Pour l'animation de l'arrière-plan*/
+.slideshow,
+.slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+/*Effet sur l'arrière-plan de l'image -> pattern.png par dessus*/
+.slideshow:after { 
+    content: '';
+    background: transparent url(../images/pattern.png) repeat top left; 
+}
+/*Diaporama sous forme de liste*/
+.slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 26s linear infinite 0s; 
+}
+/*Compte à rebours pour l'animation*/
+.slideshow li:nth-child(1) span { 
+    background-image: url(../images/Japon/01.jpg) 
+}
+.slideshow li:nth-child(2) span { 
+    background-image: url(../images/Japon/02.jpg);
+    animation-delay: 6s; 
+}
+.slideshow li:nth-child(3) span { 
+    background-image: url(../images/Japon/03.jpg);
+    animation-delay: 12s; 
+}
+.slideshow li:nth-child(4) span { 
+    background-image: url(../images/Japon/04.jpg);
+    animation-delay: 18s; 
+}
+/* Animation des images du diaporama */
+@keyframes imageAnimation { 
+    0% { opacity: 0;
+    animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+/* Afficher au moins quelque chose lorsque les animations ne sont pas supportées */
+.no-cssanimations .slideshow li span{
+	opacity: 1;
+}

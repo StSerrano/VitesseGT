@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/mystyle.css">         <!--fichier CSS-->
+        <link rel="stylesheet" href="css/SlideshowIndex.css">  <!--fichier CSS pour l'animation du background-->
+        <title>Vitesse GT</title>
+    </head>
+
+    <body>                                                     <!--BODY contient le slideshow(pour l'animation du background et le div: container (pour le top-bar, header et footer))-->
+        <ul class="slideshow">                                 <!--UL contient une liste désordonné pour l'animation du background-->
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+            <li><span>Image 07</span></li>
+            <li><span>Image 08</span></li>
+            <li><span>Image 09</span></li>
+        </ul>
+
+        <div class="container">                                <!--CONTAINER contient top-bar(menu avec un  lien + video interne) + header (menu principale) + footer (music + code DA))-->
+            <div class="top-bar">                              <!--TOP-BAR contient lien-> avac _blank + lien pour video interne (avec JS pour la video) avec float:right-->
+                <a href="https://www.instagram.com/vitessegt/" target="_blank">
+                    <strong>Instagram: </strong>Vitesse GT
+                </a>
+                <span class="right">
+                    <div id="light">
+                        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+                        <video id="ComingSoon" width="300" controls>
+                            <source src="./video/ComingSoom.mp4" type="video/mp4">
+                          </video>
+                      </div>
+                      <div id="fade" onClick="lightbox_close();"></div>
+                      <div>
+                          <a href="#" onclick="lightbox_open();">
+                            <strong>Visitez notre magasin</strong>
+                        </a>
+                    </div>
+                </span>
+                <script>                                      
+                    window.document.onkeydown = function(e) {
+                        if (!e) {
+                            e = event;
+                        }
+                        if (e.keyCode == 27) {
+                            lightbox_close();
+                        }
+                    }
+                    function lightbox_open() {
+                        var lightBoxVideo = document.getElementById("ComingSoon");
+                        window.scrollTo(0, 0);
+                        document.getElementById('light').style.display = 'block';
+                        document.getElementById('fade').style.display = 'block';
+                        lightBoxVideo.play();
+                    }
+                    function lightbox_close() {
+                        var lightBoxVideo = document.getElementById("ComingSoon");
+                        document.getElementById('light').style.display = 'none';
+                        document.getElementById('fade').style.display = 'none';
+                        lightBoxVideo.pause();
+                    }
+                </script>
+                <div class="message"><!-- Pour des messages important! --></div>
+            </div>
+
+            <header>                                        <!--HEADER contient le menu principale (les boutons) -->
+				<p class="bouton">
+					<a href="#" class="link">ACCUEIL</a>
+					<a href="./html/Allemagne.html">ALLEMAGNE</a>
+					<a href="./html/France.html">FRANCE</a>
+					<a href="./html/Italie.html">ITALIE</a>
+                    <a href="./html/Japon.html">JAPON</a>
+                    <a href="./html/Usa.html">USA</a>
+                    <a href="./html/APropos.html">À PROPOS</a>
+				</p>
+            </header>
+
+            <footer>                                      <!--FOOTER contient la musique (seulement dans la page ACCUEIL) + avec # DA avec un float:right-->
+                <span class="left">
+                    <audio controls style="width: 280px ">
+                        <source src="./music/17-LightVelocityVer.II.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                </span>
+                <span class="right">
+                    Stephanie Serrano DA:0558808
+                </span>
+            </footer>
+        </div>
+    </body>
+</html>
